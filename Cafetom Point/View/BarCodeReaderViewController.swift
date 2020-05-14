@@ -2,6 +2,7 @@
 //  BarCodeReaderViewController.swift
 //  Cafetom Point
 //　Github管理するソース
+// ソース整理
 //  Created by lion on 2020/04/29.
 //  Copyright © 2020 lion. All rights reserved.
 //
