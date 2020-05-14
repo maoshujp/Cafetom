@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "RSBarcodes_Swift",
+        "repositoryURL": "https://github.com/yeahdongcn/RSBarcodes_Swift.git",
+        "state": {
+          "branch": null,
+          "revision": "52e28dd4f2a635c2ad74abc3809eda01c0a8e3da",
+          "version": "5.0.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
