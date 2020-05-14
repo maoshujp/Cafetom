@@ -1,7 +1,7 @@
 //
 //  MyMenuViewController.swift
 //  Cafetom Point
-//  Github 管理する
+//  これはGithub管理したソース
 //  Created by lion on 2020/04/29.
 //  Copyright © 2020 lion. All rights reserved.
 //
