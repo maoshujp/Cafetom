@@ -139,13 +139,9 @@ extension MemberCardEnterViewController: UIImagePickerControllerDelegate, UINavi
         if self.selPictuerFlg == "front"{
             // ビューに表示する
             frontIV.image = image
-            //var pathComViewController = PathComViewController()
-            //pathComViewController.saveImage(imageView: frontIV,imageName: self.memberCardNoTxt.text! + "_front.jpeg")
         }else {
             // ビューに表示する
             reverseIV.image = image
-            //var pathComViewController = PathComViewController()
-            //pathComViewController.saveImage(imageView: reverseIV,imageName: self.shopNameTxt.text! + "_reverse.jpeg")
         }
         // 写真を選ぶビューを引っ込める
         self.dismiss(animated: true)
