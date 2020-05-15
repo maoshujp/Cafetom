@@ -22,7 +22,7 @@ class MemberCardEnterViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.memberCardNoTxt.text = BarCodeReaderViewController.memberCardNo
+        self.memberCardNoTxt.text = SysCom.barcodeNo
         self.memberCardNoTxt.delegate = self
         self.shopNameTxt.delegate = self
         
@@ -113,7 +113,7 @@ class MemberCardEnterViewController: UIViewController, UITextFieldDelegate {
         //データ保存
         memberCardDto.memberCardNo = self.memberCardNoTxt.text!
         memberCardDto.shopName = self.shopNameTxt.text!
-        memberCardDto.memberCardType = BarCodeReaderViewController.memberCardType
+        memberCardDto.memberCardType = SysCom.barcodeType
         memberCardDto.frontImg = memberCardDto.memberCardNo + "_front.jpeg"
         memberCardDto.reverseImg = memberCardDto.memberCardNo + "_reverse.jpeg"
         bussinessPresenter.createMemberCard(newMemberCardDto: memberCardDto)

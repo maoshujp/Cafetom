@@ -28,12 +28,12 @@ class ShopSiteListViewController: UIViewController, UITableViewDelegate, UITable
         // Delegateを設定する.
         listTV.delegate = self
         //バーコードNo.
-        self.keywordTxt.text = BarCodeReaderViewController.memberCardNo
+        self.keywordTxt.text = SysCom.barcodeNo
         //キーを入れる
         keyword = self.keywordTxt.text!
         self.keywordTxt.delegate = self
         //バーコードを作成する
-        if !BarCodeReaderViewController.memberCardNo.isEmpty{
+        if !SysCom.barcodeNo.isEmpty{
             createBarcodeImg()
         }
         
@@ -61,12 +61,12 @@ class ShopSiteListViewController: UIViewController, UITableViewDelegate, UITable
      バーコード画像を生成する
      */
     func createBarcodeImg(){
-        if BarCodeReaderViewController.memberCardType.contains("EAN-13"){
-            barcodeIV.image = CreateCodeImageCom.generateEan13Barcode(string: BarCodeReaderViewController.memberCardNo)
-        }else if BarCodeReaderViewController.memberCardType.contains("Code39"){
-            barcodeIV.image = CreateCodeImageCom.generateCode39Barcode(string: BarCodeReaderViewController.memberCardNo)
-        }else if BarCodeReaderViewController.memberCardType.contains("Code128"){
-            barcodeIV.image = CreateCodeImageCom.generateCode128Barcode(string: BarCodeReaderViewController.memberCardNo)
+        if SysCom.barcodeType.contains("EAN-13"){
+            barcodeIV.image = CreateCodeImageCom.generateEan13Barcode(string: SysCom.barcodeNo)
+        }else if SysCom.barcodeType.contains("Code39"){
+            barcodeIV.image = CreateCodeImageCom.generateCode39Barcode(string: SysCom.barcodeNo)
+        }else if SysCom.barcodeType.contains("Code128"){
+            barcodeIV.image = CreateCodeImageCom.generateCode128Barcode(string: SysCom.barcodeNo)
         }
         
     }
@@ -112,7 +112,7 @@ class ShopSiteListViewController: UIViewController, UITableViewDelegate, UITable
         }else if indexPath.row == 4 {
             //最安値.com
             goodslink = "https://www.saiyasune.com/J" + keyword + ".html"
-            if BarCodeReaderViewController.memberCardNo.isEmpty{
+            if SysCom.barcodeNo.isEmpty{
                 //スペースを置換
                 var newStr = keyword.replacingOccurrences(of: " ", with: "+")
                 newStr = keyword.replacingOccurrences(of: "　", with: "+")

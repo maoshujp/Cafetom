@@ -32,7 +32,10 @@ class PointTVCell: UITableViewCell {
         
         self.shopNameLbl.text = pointInfo.shopName
         self.shopMessageLbl.text = pointInfo.shopMessage
-        self.pointLbl.text = "积分:" + String(pointInfo.point)
+        self.pointLbl.text = ""
+        if pointInfo.point > 0 {
+            self.pointLbl.text = "积分:" + String(pointInfo.point)
+        }
         //ローカルの画像
         self.shopLogoImgIV.image = UIImage(named: pointInfo.shopLogoImg)
     

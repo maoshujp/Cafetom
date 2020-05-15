@@ -13,13 +13,13 @@ import AVFoundation
 class BarCodeReaderViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
 
     //スキャンされたメンバーナンバー
-    static var memberCardNo:String = ""
+    //static var memberCardNo:String = ""
     
     //スキャンされたメンバータイプ
-    static var memberCardType:String = ""
+    //static var memberCardType:String = ""
     
     //スキャンされた遷移元
-    static var pageUrl:String = ""
+    //static var pageUrl:String = ""
     
     // カメラやマイクの入出力を管理するオブジェクトを生成
     private let session = AVCaptureSession()
@@ -101,9 +101,9 @@ class BarCodeReaderViewController: UIViewController, AVCaptureMetadataOutputObje
             // バーコードの内容が空かどうかの確認
             if metadata.stringValue == nil { continue }
             // 読み取ったデータの値
-            BarCodeReaderViewController.memberCardNo = metadata.stringValue!
-            BarCodeReaderViewController.memberCardType = metadata.type.rawValue
-            print(BarCodeReaderViewController.memberCardType)
+            SysCom.barcodeNo = metadata.stringValue!
+            SysCom.barcodeType = metadata.type.rawValue
+            print(SysCom.barcodeType)
 
             // 読み取り終了
             //let nextVC = storyboard?.instantiateViewController(withIdentifier: "MemberCardEnterView")
@@ -114,7 +114,7 @@ class BarCodeReaderViewController: UIViewController, AVCaptureMetadataOutputObje
                   UIApplication.shared.open(url!)
                 }
             }else {
-                let nextVC = storyboard?.instantiateViewController(withIdentifier: BarCodeReaderViewController.pageUrl)
+                let nextVC = storyboard?.instantiateViewController(withIdentifier: SysCom.pageUrl)
                 present(nextVC!, animated: true, completion: nil)
                 self.navigationController?.pushViewController(nextVC!, animated: true)
             }

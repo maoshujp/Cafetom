@@ -87,14 +87,14 @@ class GoodsToolsViewController: UIViewController, UITableViewDelegate, UITableVi
                 //操作フラグ バーコードからスキャン
                 SysCom.operationCode = "Barcode-SCAN"
                 // 比較価格画面に遷移[ShopSiteListView]
-                BarCodeReaderViewController.pageUrl = "ShopSiteListView"
+                SysCom.pageUrl = "ShopSiteListView"
                 let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "BarCodeReaderView")
                 self.present(nextVC!, animated: true, completion: nil)
                 self.navigationController?.pushViewController(nextVC!, animated: true)
             }else if indexPath.row == 1{
                 //操作フラグ 手動でスキャン
                 SysCom.operationCode = "Manual-SCAN"
-                BarCodeReaderViewController.memberCardNo = ""
+                SysCom.barcodeNo = ""
                 // 比較価格画面に遷移[ShopSiteListView]
                 let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "ShopSiteListView")
                 self.present(nextVC!, animated: true, completion: nil)

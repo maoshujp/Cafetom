@@ -16,6 +16,15 @@ class SysCom{
     //ショップID
     static var shopId = ""
     
+    //スキャンされたバーコード
+    static var barcodeNo:String = ""
+    
+    //スキャンされたメンバータイプ
+    static var barcodeType:String = ""
+    
+    //スキャンされた遷移元
+    static var pageUrl:String = ""
+    
     // URLエンコード
     static func urlEncode(string: String) -> String {
         return string.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)!

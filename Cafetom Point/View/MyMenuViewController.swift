@@ -87,14 +87,14 @@ class MyMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
           // 画面に遷移
           if indexPath.row == 0{
             // スキャン追加画面に遷移[MemberCardEnterView]
-            BarCodeReaderViewController.memberCardNo = ""
-            BarCodeReaderViewController.pageUrl = "MemberCardEnterView"
+            SysCom.barcodeNo = ""
+            SysCom.pageUrl = "MemberCardEnterView"
             let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "BarCodeReaderView")
             self.present(nextVC!, animated: true, completion: nil)
             self.navigationController?.pushViewController(nextVC!, animated: true)
           } else if indexPath.row == 1{
              // 手動追加画面に遷移
-            BarCodeReaderViewController.memberCardNo = ""
+            SysCom.barcodeNo = ""
             let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "MemberCardEnterView")
             self.present(nextVC!, animated: true, completion: nil)
             self.navigationController?.pushViewController(nextVC!, animated: true)
