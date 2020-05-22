@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B40EBC6324768740009B61AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B40EBC6224768740009B61AB /* Assets.xcassets */; };
 		B43F767E245FF50900AE2618 /* PathComViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43F767D245FF50900AE2618 /* PathComViewController.swift */; };
 		B43F768024623A7100AE2618 /* GoodsToolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43F767F24623A7100AE2618 /* GoodsToolsViewController.swift */; };
 		B43F76852462624100AE2618 /* CardImgTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43F76842462624100AE2618 /* CardImgTVCell.swift */; };
@@ -20,7 +21,6 @@
 		B4A9C0BB2459693A00BB800D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A9C0BA2459693A00BB800D /* SceneDelegate.swift */; };
 		B4A9C0C22459693A00BB800D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4A9C0C02459693A00BB800D /* Main.storyboard */; };
 		B4A9C0C52459693A00BB800D /* CafetomPoint.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B4A9C0C32459693A00BB800D /* CafetomPoint.xcdatamodeld */; };
-		B4A9C0C72459694000BB800D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4A9C0C62459694000BB800D /* Assets.xcassets */; };
 		B4A9C0CA2459694000BB800D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4A9C0C82459694000BB800D /* LaunchScreen.storyboard */; };
 		B4A9C0D32459695C00BB800D /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4A9C0D22459695C00BB800D /* WebKit.framework */; };
 		B4A9C0DA24596D7600BB800D /* BaseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A9C0D924596D7600BB800D /* BaseDto.swift */; };
@@ -38,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B40EBC6224768740009B61AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B43F767D245FF50900AE2618 /* PathComViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathComViewController.swift; sourceTree = "<group>"; };
 		B43F767F24623A7100AE2618 /* GoodsToolsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsToolsViewController.swift; sourceTree = "<group>"; };
 		B43F76842462624100AE2618 /* CardImgTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImgTVCell.swift; sourceTree = "<group>"; };
@@ -52,7 +53,6 @@
 		B4A9C0BA2459693A00BB800D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B4A9C0C12459693A00BB800D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B4A9C0C42459693A00BB800D /* Cafetom_Point.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cafetom_Point.xcdatamodel; sourceTree = "<group>"; };
-		B4A9C0C62459694000BB800D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B4A9C0C92459694000BB800D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B4A9C0CB2459694000BB800D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4A9C0D22459695C00BB800D /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
@@ -119,10 +119,10 @@
 				B4A9C0B82459693A00BB800D /* AppDelegate.swift */,
 				B4A9C0BA2459693A00BB800D /* SceneDelegate.swift */,
 				B4A9C0C02459693A00BB800D /* Main.storyboard */,
-				B4A9C0C62459694000BB800D /* Assets.xcassets */,
 				B4A9C0C82459694000BB800D /* LaunchScreen.storyboard */,
 				B4A9C0CB2459694000BB800D /* Info.plist */,
 				B4A9C0C32459693A00BB800D /* CafetomPoint.xcdatamodeld */,
+				B40EBC6224768740009B61AB /* Assets.xcassets */,
 			);
 			path = "Cafetom Point";
 			sourceTree = "<group>";
@@ -262,7 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4A9C0CA2459694000BB800D /* LaunchScreen.storyboard in Resources */,
-				B4A9C0C72459694000BB800D /* Assets.xcassets in Resources */,
+				B40EBC6324768740009B61AB /* Assets.xcassets in Resources */,
 				B4A9C0C22459693A00BB800D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

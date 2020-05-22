@@ -11,6 +11,7 @@ import UIKit
 
 class PointListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var cardCountLbl: UILabel!
     @IBOutlet weak var listTV: UITableView!
     //Presenterを初期化する
     var bussinessPresenter = BussinessPresenter()
@@ -38,6 +39,13 @@ class PointListViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     /**
+     ステータスバー白文字にする
+     */
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    /**
      画面データを読み込み
      */
     func initData(){
@@ -47,6 +55,8 @@ class PointListViewController: UIViewController, UITableViewDelegate, UITableVie
         
         pointItems = bussinessPresenter.getPointList()
         dataCount = pointItems.count
+        //カード枚数
+        cardCountLbl.text = String(dataCount)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -73,5 +83,5 @@ class PointListViewController: UIViewController, UITableViewDelegate, UITableVie
          self.present(nextVC!, animated: true, completion: nil)
          self.navigationController?.pushViewController(nextVC!, animated: true) 
     }
-        
+    
 }

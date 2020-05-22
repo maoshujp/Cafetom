@@ -13,6 +13,11 @@ class PointDetailViewController: UIViewController, UICollectionViewDelegate, UIC
 
     
     @IBOutlet weak var listCV: UICollectionView!
+    @IBOutlet weak var shopLogoImgIV: UIImageView!
+    @IBOutlet weak var shopNameLbl: UILabel!
+    @IBOutlet weak var pointLbl: UILabel!
+    @IBOutlet weak var usePointBtn: UIButton!
+    @IBOutlet weak var savingPointBtn: UIButton!
     
     //Presenterを初期化する
     var bussinessPresenter = BussinessPresenter()
@@ -34,6 +39,12 @@ class PointDetailViewController: UIViewController, UICollectionViewDelegate, UIC
 
         // 画面にジェスチャーを登録
         view.addGestureRecognizer(downSwipeGesture)
+        
+        //UIレイアウトを設定する
+        setLeyout()
+        
+
+        
     }
     
     /**
@@ -46,6 +57,36 @@ class PointDetailViewController: UIViewController, UICollectionViewDelegate, UIC
         
         pointDto = bussinessPresenter.getPointDataByShopId(schShopId: SysCom.shopId)
         dataCount = pointDto.shopPointCount
+        
+        //データを表示する
+        shopNameLbl.text = pointDto.shopName
+        pointLbl.text = String(pointDto.point) + "/" + String(pointDto.shopPointCount)
+        shopLogoImgIV.image = UIImage(named: pointDto.shopLogoImg)
+
+    }
+    
+    //UIレイアウトを設定する
+    func setLeyout(){
+        // -- button レイアウト  --
+        //丸角
+        usePointBtn.layer.cornerRadius = 10.0
+        //丸角
+        savingPointBtn.layer.cornerRadius = 10.0
+        //外枠の色を指定
+        savingPointBtn.layer.borderColor = UIColor.orange.cgColor
+        //外枠の太さを指定
+        savingPointBtn.layer.borderWidth = 3.0
+        
+        // -- image レイアウト --
+        //角を丸くする
+        shopLogoImgIV.layer.cornerRadius = self.shopLogoImgIV.frame.size.width * 0.1
+        shopLogoImgIV.clipsToBounds = true
+        
+        // -- CollectionViewレイアウト --
+        let layout = UICollectionViewFlowLayout()
+        // 上、下、左、右のスペース設定する
+        layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        listCV.collectionViewLayout = layout
     }
     
     /**
@@ -86,7 +127,7 @@ class PointDetailViewController: UIViewController, UICollectionViewDelegate, UIC
     //セルの配置について決める
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let horizontalSpace : CGFloat = 4
-        let cellSize : CGFloat = self.view.bounds.width / 6 - horizontalSpace
+        let cellSize : CGFloat = self.view.bounds.width / 7 - horizontalSpace
        
         return CGSize(width: cellSize, height: cellSize)
     }
