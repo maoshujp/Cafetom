@@ -10,6 +10,7 @@ import UIKit
 
 class MemberCardListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var cardCountLbl: UILabel!
     @IBOutlet weak var listTV: UITableView!
     //Presenterを初期化する
     var bussinessPresenter = BussinessPresenter()
@@ -40,6 +41,13 @@ class MemberCardListViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     /**
+     ステータスバー白文字にする
+     */
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    /**
      画面データを読み込み
      */
     func initData(){
@@ -49,6 +57,7 @@ class MemberCardListViewController: UIViewController, UITableViewDelegate, UITab
         
         memberCardItems = bussinessPresenter.getMemberCardDataList()
         dataCount = memberCardItems.count
+        cardCountLbl.text = String(memberCardItems.count)
     }
     
     /**

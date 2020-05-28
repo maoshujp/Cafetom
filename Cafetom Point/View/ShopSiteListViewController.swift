@@ -11,11 +11,9 @@ import UIKit
 class ShopSiteListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate{
 
     @IBOutlet weak var listTV: UITableView!
-    @IBOutlet weak var barcodeIV: UIImageView!
     @IBOutlet weak var keywordTxt: UITextField!
     
     var keyword:String = ""
-    
     private let shopSiteItems: NSArray = ["雅虎","乐天","亚马逊","PayPay","最安値.Com","赤ちゃん本舗"]
     
     /**
@@ -32,11 +30,6 @@ class ShopSiteListViewController: UIViewController, UITableViewDelegate, UITable
         //キーを入れる
         keyword = self.keywordTxt.text!
         self.keywordTxt.delegate = self
-        //バーコードを作成する
-        if !SysCom.barcodeNo.isEmpty{
-            createBarcodeImg()
-        }
-        
         // 下向きにスワイプした時のジェスチャーを作成
         let downSwipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(self.closeModalView))
         downSwipeGesture.direction = .down
@@ -55,20 +48,6 @@ class ShopSiteListViewController: UIViewController, UITableViewDelegate, UITable
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
-    }
-    
-    /**
-     バーコード画像を生成する
-     */
-    func createBarcodeImg(){
-        if SysCom.barcodeType.contains("EAN-13"){
-            barcodeIV.image = CreateCodeImageCom.generateEan13Barcode(string: SysCom.barcodeNo)
-        }else if SysCom.barcodeType.contains("Code39"){
-            barcodeIV.image = CreateCodeImageCom.generateCode39Barcode(string: SysCom.barcodeNo)
-        }else if SysCom.barcodeType.contains("Code128"){
-            barcodeIV.image = CreateCodeImageCom.generateCode128Barcode(string: SysCom.barcodeNo)
-        }
-        
     }
     
     /**

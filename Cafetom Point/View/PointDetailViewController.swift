@@ -69,9 +69,9 @@ class PointDetailViewController: UIViewController, UICollectionViewDelegate, UIC
     func setLeyout(){
         // -- button レイアウト  --
         //丸角
-        usePointBtn.layer.cornerRadius = 10.0
+        usePointBtn.layer.cornerRadius = 14.0
         //丸角
-        savingPointBtn.layer.cornerRadius = 10.0
+        savingPointBtn.layer.cornerRadius = 14.0
         //外枠の色を指定
         savingPointBtn.layer.borderColor = UIColor.orange.cgColor
         //外枠の太さを指定
